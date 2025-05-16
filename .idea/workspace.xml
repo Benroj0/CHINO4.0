@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="197a7f10-05b1-42cb-8a99-16a220bf1b09" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/controllers/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/controllers/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/DetPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/DetPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/DetProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/DetProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/Envio.java" beforeDir="false" afterPath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/Envio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/MarketChino-master/src/main/java/com/ChinoMarket/pe/proyecto_crud/entities/Producto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +31,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/Benroj0/CHINITOMARKET.git",
-    "accountId": "091f6047-637f-44ca-b7a0-1692fa3657d1"
+    "url": "https://github.com/Benroj0/CHINO4.0.git",
+    "accountId": "c38408c2-1ab5-4160-a96a-0b7df62e6a68"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -36,16 +44,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrador/Documents/distribuidas-proyecto/MarketChino-master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Jasson Laureano/Documents/microservicios/ms/companies-crud"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

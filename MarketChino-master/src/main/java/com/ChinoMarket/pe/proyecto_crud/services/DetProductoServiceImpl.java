@@ -24,8 +24,8 @@ public class DetProductoServiceImpl implements DetProductoService {
     }
 
     @Override
-    public List<DetProducto> obtenerDetProductoPorProductoId(Long productoId) {
-        return detProductoRepository.findByProductoId(productoId);
+    public List<DetProducto> obtenerDetProductoPorProductoId(Long productoIdPro) {
+        return detProductoRepository.findByProductoIdPro(productoIdPro);
     }
 
     @Override

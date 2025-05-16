@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "cliente")
-@Tag(name = "Cliente resource")
+@Tag(name = "CLIENTES")
 public class ClienteController {
     private final ClienteService clienteService;
 
@@ -44,11 +44,15 @@ public class ClienteController {
     // Actualizar cliente (PUT)
     @PutMapping("/{idC}")
     public ResponseEntity<Cliente> updateCliente(@PathVariable Long idC, @RequestBody Cliente clienteActualizado) {
-        Cliente cliente = clienteService.update(idC, clienteActualizado);
-        if (cliente != null) {
-            return new ResponseEntity<>(cliente, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        try {
+            Cliente cliente = clienteService.update(idC, clienteActualizado);
+            if (cliente != null) {
+                return new ResponseEntity<>(cliente, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        } catch (RuntimeException e) {
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
     }
 

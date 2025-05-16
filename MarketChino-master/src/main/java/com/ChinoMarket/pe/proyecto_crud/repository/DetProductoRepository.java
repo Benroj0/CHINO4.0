@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface DetProductoRepository extends JpaRepository<DetProducto, Long> {
     // Métodos personalizados si es necesario
-    List<DetProducto> findByProductoId(Long productoId);
+    List<DetProducto> findByProductoIdPro(Long idPro);
 }

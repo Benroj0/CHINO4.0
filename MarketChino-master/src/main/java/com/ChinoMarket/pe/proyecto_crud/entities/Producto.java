@@ -1,87 +1,81 @@
 package com.ChinoMarket.pe.proyecto_crud.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "producto")
-
 public class Producto {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdPro;
-    private String Nombre;
-    private String Desc;
-    private String Imagen;
-    private Long Cantidad;
-    private Long Precio;
-    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
-    @JoinColumn(name = "IdC", referencedColumnName = "id")
-    private Long IdC;
-    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
-    @JoinColumn(name = "IdCat", referencedColumnName = "id")
-    private Long IdCat;
+    @Column(name = "IdPro")
+    private Long idPro;
+    private String nombre;
+    private String descripcion;
+    private String imagen;
+    private Long cantidad;
+    private Long precio;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoria_id", referencedColumnName = "idCat")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Categoria categoria;
+
 
     public Long getIdPro() {
-        return IdPro;
+        return idPro;
     }
 
     public void setIdPro(Long idPro) {
-        IdPro = idPro;
+        this.idPro = idPro;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
-    public String getDesc() {
-        return Desc;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDesc(String desc) {
-        Desc = desc;
-    }
-
-    public String getImagen() {
-        return Imagen;
-    }
-
-    public void setImagen(String imagen) {
-        Imagen = imagen;
-    }
-
-    public Long getCantidad() {
-        return Cantidad;
-    }
-
-    public void setCantidad(Long cantidad) {
-        Cantidad = cantidad;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Long getPrecio() {
-        return Precio;
+        return precio;
     }
 
     public void setPrecio(Long precio) {
-        Precio = precio;
+        this.precio = precio;
     }
 
-    public Long getIdC() {
-        return IdC;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setIdC(Long idC) {
-        IdC = idC;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
-    public Long getIdCat() {
-        return IdCat;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setIdCat(Long idCat) {
-        IdCat = idCat;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public Long getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Long cantidad) {
+        this.cantidad = cantidad;
     }
 }

@@ -7,6 +7,6 @@ import java.util.List;
 
 
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
-    List<Pedido> findByClienteId(Long clienteId);
-    List<Pedido> findByEstado(String estado);  // Ejemplo: buscar pedidos por estado
+    List<Pedido> findByCliente_IdC(Long clienteId);
+    List<Pedido> findByEstado(String estado);
 }

@@ -6,59 +6,59 @@ import jakarta.persistence.*;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdC;
-    private String Nombres;
-    private String Email;
-    private String Password;
-    private Long Celular;
-    private String Direccion;
+    private Long idC;
+    private String nombres;
+    private String email;
+    private String password;
+    private Long celular;
+    private String direccion;
 
     public Long getIdC() {
-        return IdC;
+        return idC;
     }
 
     public void setIdC(Long idC) {
-        IdC = idC;
+        this.idC = idC;
     }
 
     public String getNombres() {
-        return Nombres;
+        return nombres;
     }
 
     public void setNombres(String nombres) {
-        Nombres = nombres;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
+        this.nombres = nombres;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public Long getCelular() {
-        return Celular;
+        return celular;
     }
 
     public void setCelular(Long celular) {
-        Celular = celular;
+        this.celular = celular;
     }
 
     public String getDireccion() {
-        return Direccion;
+        return direccion;
     }
 
     public void setDireccion(String direccion) {
-        Direccion = direccion;
+        this.direccion = direccion;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
 
