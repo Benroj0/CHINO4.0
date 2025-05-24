@@ -6,19 +6,19 @@ import jakarta.persistence.*;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idC;
+    private Long idCliente;
     private String nombres;
     private String email;
     private String password;
     private Long celular;
     private String direccion;
 
-    public Long getIdC() {
-        return idC;
+    public Long getIdCliente() {
+        return idCliente;
     }
 
-    public void setIdC(Long idC) {
-        this.idC = idC;
+    public void setIdC(Long idCliente) {
+        this.idCliente = idCliente;
     }
 
     public String getNombres() {
