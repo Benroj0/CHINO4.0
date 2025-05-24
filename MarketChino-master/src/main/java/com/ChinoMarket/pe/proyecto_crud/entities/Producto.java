@@ -11,8 +11,8 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdPro")
-    private Long idPro;
+    @Column(name = "IdProducto")
+    private Long idProducto;
     private String nombre;
     private String descripcion;
     private String imagen;
@@ -28,12 +28,12 @@ public class Producto {
     private Categoria categoria;
 
 
-    public Long getIdPro() {
-        return idPro;
+    public Long getIdProducto() {
+        return idProducto;
     }
 
-    public void setIdPro(Long idPro) {
-        this.idPro = idPro;
+    public void setIdProducto(Long idProducto) {
+        this.idProducto = idProducto;
     }
 
     public String getNombre() {
