@@ -9,10 +9,10 @@ public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idStock;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IdPro", referencedColumnName = "IdPro")
+    @JoinColumn(name = "IdProducto", referencedColumnName = "IdProducto")
     private Producto producto;
 
     private String descripcion;
@@ -21,12 +21,12 @@ public class Stock {
     private Integer balance;
 
 
-    public Long getId() {
-        return id;
+    public Long getIdStock() {
+        return idStock;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdStock(Long idStock) {
+        this.idStock = idStock;
     }
 
     public Producto getProducto() {
