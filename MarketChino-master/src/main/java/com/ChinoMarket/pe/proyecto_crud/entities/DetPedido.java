@@ -10,16 +10,16 @@ public class DetPedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idDP;
+    private Long idDetallePedido;
     private Integer cantidad;
     private Long precioUnitario;
 
     @ManyToOne
-    @JoinColumn(name = "producto_id", referencedColumnName = "IdPro")
+    @JoinColumn(name = "producto_id", referencedColumnName = "IdProducto")
     private Producto producto;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IdP", referencedColumnName = "IdP")
+    @JoinColumn(name = "IdPedido", referencedColumnName = "IdPedido")
     private Pedido pedido;
 
     public Long getPrecioUnitario() {
@@ -38,12 +38,12 @@ public class DetPedido {
         this.producto = producto;
     }
 
-    public Long getIdDP() {
-        return idDP;
+    public Long getIdDetallePedido() {
+        return idDetallePedido;
     }
 
-    public void setIdDP(Long idDP) {
-        this.idDP = idDP;
+    public void setIdDetallePedido(Long idDP) {
+        this.idDetallePedido = idDP;
     }
 
     public Integer getCantidad() {
