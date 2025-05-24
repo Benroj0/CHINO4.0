@@ -7,16 +7,16 @@ import jakarta.persistence.*;
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCat;
+    private Long idCategoria;
     private String nombre;
     private String estado;
 
-    public Long getIdCat() {
-        return idCat;
+    public Long getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setIdCat(Long idCat) {
-        this.idCat = idCat;
+    public void setIdCategoria(Long idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public String getNombre() {
@@ -35,3 +35,4 @@ public class Categoria {
         this.estado = estado;
     }
 }
+
