@@ -1,22 +1,46 @@
 package com.ChinoMarket.pe.proyecto_crud.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-
 
 @Entity
 @Table(name = "det_pedido")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "pedido"})
 public class DetPedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDP;
-    private Long cantidad;
-    private Long precio;
+    private Integer cantidad;
+    private Long precioUnitario;
 
-    // Relación ManyToOne (Cada DetPedido pertenece a un Pedido)
+    @ManyToOne
+    @JoinColumn(name = "producto_id", referencedColumnName = "IdPro")
+    private Producto producto;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IdP", referencedColumnName = "IdP")  // Asegúrate de que 'IdP' en Pedido sea la clave primaria
-    private Pedido pedido;  // Relación inversa con Pedido
+    @JoinColumn(name = "IdP", referencedColumnName = "IdP")
+    private Pedido pedido;
+
+    @ManyToOne
+    @JoinColumn(name = "productounidad_id")
+    private ProductoUnidad productoUnidad;
+
+    public Long getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public void setPrecioUnitario(Long precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
 
     public Long getIdDP() {
         return idDP;
@@ -26,20 +50,12 @@ public class DetPedido {
         this.idDP = idDP;
     }
 
-    public Long getCantidad() {
+    public Integer getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(Long cantidad) {
+    public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
-    }
-
-    public Long getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(Long precio) {
-        this.precio = precio;
     }
 
     public Pedido getPedido() {

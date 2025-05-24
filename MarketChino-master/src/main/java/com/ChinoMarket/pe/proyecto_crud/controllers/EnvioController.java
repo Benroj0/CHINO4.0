@@ -1,36 +1,47 @@
 package com.ChinoMarket.pe.proyecto_crud.controllers;
 
-import com.ChinoMarket.pe.proyecto_crud.entities.Envio;
-import com.ChinoMarket.pe.proyecto_crud.services.EnvioService;
+import com.ChinoMarket.pe.proyecto_crud.entities.DetPedido;
+import com.ChinoMarket.pe.proyecto_crud.entities.Pedido;
+import com.ChinoMarket.pe.proyecto_crud.services.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/envios")
-public class EnvioController {
+@RequestMapping("/api/pedidos")
+public class PedidoController {
 
     @Autowired
-    private EnvioService envioService;
-
-    @PostMapping
-    public Envio crearEnvio(@RequestBody Envio envio) {
-        return envioService.crearEnvio(envio);
+    private PedidoService pedidoService;
+    @PostMapping("/crearpedido")
+    public Pedido crearPedido(@RequestBody Pedido pedido) {
+        List<DetPedido> detalles = pedido.getDetallesPedido();
+        if (detalles != null) {
+            for (DetPedido detalle : detalles) { //si la venta no se realiza, generar error
+                detalle.setPedido(pedido);
+            }
+        }
+        return pedidoService.save(pedido);
     }
 
     @GetMapping
-    public List<Envio> obtenerTodosLosEnvios() {
-        return envioService.obtenerTodosLosEnvios();
+    public List<Pedido> obtenerTodosLosPedidos() {
+        return pedidoService.obtenerTodosLosPedidos();
     }
 
     @GetMapping("/cliente/{clienteId}")
-    public List<Envio> obtenerEnviosPorClienteId(@PathVariable Long clienteId) {
-        return envioService.obtenerEnviosPorClienteId(clienteId);
+    public List<Pedido> obtenerPedidosPorClienteId(@PathVariable Long clienteId) {
+        return pedidoService.obtenerPedidosPorClienteId(clienteId);
+    }
+
+    @GetMapping("/estado/{estado}")
+    public List<Pedido> obtenerPedidosPorEstado(@PathVariable String estado) {
+        return pedidoService.obtenerPedidosPorEstado(estado);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarEnvio(@PathVariable Long id) {
-        envioService.eliminarEnvio(id);
+    public void eliminarPedido(@PathVariable Long id) {
+        pedidoService.eliminarPedido(id);
     }
 }

@@ -1,12 +1,15 @@
 package com.ChinoMarket.pe.proyecto_crud.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "pedido")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler", "detPedido" })
 public class Pedido {
 
     @Id
@@ -14,15 +17,17 @@ public class Pedido {
     private Long idP;
     private Long numpedido;
     private String estado;
-    private LocalDate dechaEmi;
     private Long totalpago;
     private String tipocomprobante;
     private Long numerocomprobante;
     private String metodopago;
 
-    // Relación OneToMany (Un Pedido puede tener muchos DetPedido)
+    @CreationTimestamp
+    @Column(name = "fecha_emision")
+    private LocalDateTime fechaEmision;
+
     @OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<DetPedido> detallesPedido;  // Relación con DetPedido
+    private List<DetPedido> detallesPedido;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
@@ -44,12 +49,12 @@ public class Pedido {
         this.numpedido = numpedido;
     }
 
-    public LocalDate getDechaEmi() {
-        return dechaEmi;
+    public LocalDateTime getFechaEmision() {
+        return fechaEmision;
     }
 
-    public void setDechaEmi(LocalDate dechaEmi) {
-        this.dechaEmi = dechaEmi;
+    public void setFechaEmision(LocalDateTime fechaEmision) {
+        this.fechaEmision = fechaEmision;
     }
 
     public Long getTotalpago() {
