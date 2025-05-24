@@ -8,10 +8,10 @@ public class Envio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idEnvio;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idPro", referencedColumnName = "IdPro")
+    @JoinColumn(name = "idProducto", referencedColumnName = "IdProducto")
     private Producto producto;
     @ManyToOne
     @JoinColumn(name = "cliente_id")
@@ -20,12 +20,12 @@ public class Envio {
     private String direccion;
     private String estado;
 
-    public Long getId() {
-        return id;
+    public Long getIdEnvio() {
+        return idEnvio;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long idEnvio) {
+        this.idEnvio = idEnvio;
     }
 
     public Producto getProducto() {
