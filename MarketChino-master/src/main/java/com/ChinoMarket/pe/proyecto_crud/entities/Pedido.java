@@ -14,7 +14,7 @@ public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idP;
+    private Long idPedido;
     private Long numpedido;
     private String estado;
     private Long totalpago;
@@ -33,12 +33,12 @@ public class Pedido {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    public Long getIdP() {
-        return idP;
+    public Long getIdPedido() {
+        return idPedido;
     }
 
-    public void setIdP(Long idP) {
-        this.idP = idP;
+    public void setIdP(Long idPedido) {
+        this.idP = idPedido;
     }
 
     public Long getNumpedido() {
