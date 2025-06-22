@@ -73,7 +73,7 @@ services:
         EUREKA_SERVER_URL: http://registry-server:8761/eureka
         CONFIG_SERVER_URL: http://config-server:7777
       ports:
-       -"3030:3030"
+       - "3030:3030"
 
     gateway:
       image: gateway:latest
