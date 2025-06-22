@@ -33,8 +33,8 @@ services:
         EUREKA_SERVER_URL: http://registry-server:8761/eureka
       ports:
         - "7777:7777"
-    networks:
-      - chino-net
+      networks:
+        - chino-net
 
     marketchino-master:
       image: marketchino-master:latest
@@ -47,7 +47,7 @@ services:
       ports:
         - "8081:8081"
       networks:
-        - chino-net  
+        - chino-net
 
     report-ms:
       image: report-ms:latest
@@ -60,20 +60,21 @@ services:
       ports:
         - "7070:7070"
       networks:
-        - chino-net    
-
+        - chino-net
 
     auth-server:
       image: auth-server:latest
       container_name: auth-server
       depends_on:
-        -registry-server
-        -config-server
+        - registry-server
+        - config-server
       environment:
         EUREKA_SERVER_URL: http://registry-server:8761/eureka
         CONFIG_SERVER_URL: http://config-server:7777
       ports:
-       - "3030:3030"
+        - "3030:3030"
+      networks:
+        - chino-net
 
     gateway:
       image: gateway:latest
@@ -91,4 +92,4 @@ services:
 
 networks:
   chino-net:
-    driver: bridge    
+    driver: bridge
