@@ -32,4 +32,5 @@ eureka:
     instance-id: "${spring.application.name}:${random.value}"
   client:
     service-url:
-      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka}
+     #defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka}
+      defaultZone: http://ms-registry-server:8761/eureka/
